@@ -1,0 +1,25 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Python environments, bytecode, and test caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend dependencies and generated builds
+node_modules/
+dist/
+
+# Local databases, logs, and generated telemetry
+*.sqlite
+*.sqlite3
+*.db
+*.log
+data/telemetry/*
+!data/telemetry/.gitkeep

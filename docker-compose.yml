@@ -1,0 +1,81 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: medchain
+      POSTGRES_PASSWORD: medchain
+      POSTGRES_DB: medchain
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  influxdb:
+    image: influxdb:2.7
+    restart: unless-stopped
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: medchain-admin
+      DOCKER_INFLUXDB_INIT_ORG: medchain
+      DOCKER_INFLUXDB_INIT_BUCKET: telemetry
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: medchain-dev-token
+    ports:
+      - "8086:8086"
+    volumes:
+      - influx_data:/var/lib/influxdb2
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - mongo
+      - influxdb
+    environment:
+      DATABASE_URL: postgresql+psycopg2://medchain:medchain@postgres:5432/medchain
+      MONGODB_URL: mongodb://mongo:27017
+      MONGODB_DB: medchain
+      INFLUX_URL: http://influxdb:8086
+      INFLUX_TOKEN: medchain-dev-token
+      INFLUX_ORG: medchain
+      INFLUX_BUCKET: telemetry
+      JWT_SECRET: change-me-in-production
+      CORS_ORIGINS: "*"
+      # Must match the volume mount target below, not the host-layout default
+      # config.py would otherwise compute — see the comment in app/config.py.
+      DATA_DIR: /app/data
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+    environment:
+      # Vite's dev-server proxy (vite.config.js) runs inside this container,
+      # so "localhost:5000" would point back at the frontend container itself,
+      # not the backend one. Docker's internal DNS resolves the service name
+      # "backend" to the right container on the compose network.
+      API_PROXY_TARGET: http://backend:5000
+
+volumes:
+  postgres_data:
+  mongo_data:
+  influx_data:

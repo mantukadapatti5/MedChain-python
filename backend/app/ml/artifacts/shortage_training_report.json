@@ -1,0 +1,396 @@
+{
+  "trainedAt": "2026-10-15T07:10:34.140719+00:00",
+  "method": "Random Forest Classifier (scikit-learn, 100 trees, max depth 8)",
+  "groundTruth": "simulated",
+  "validatedOnRealData": false,
+  "dataSource": "synthetic sales history (generate_dataset.py) + randomly simulated stock levels",
+  "labelDefinition": "1 if synthetic demand over the next (lead_time + 7) days exceeds the simulated stock; features use past data only",
+  "datasetSize": 11298,
+  "classBalance": {
+    "examples": 11298,
+    "shortageRate": 0.4474,
+    "byDrug": {
+      "Amoxicillin 250mg": 0.4418,
+      "Azithromycin 500mg": 0.4659,
+      "Ceftriaxone 1g Injection": 0.4368,
+      "Insulin Glargine 100IU": 0.4318,
+      "Metformin 500mg": 0.4548,
+      "ORS Sachets": 0.4634,
+      "Paracetamol 500mg": 0.4374
+    }
+  },
+  "splitStrategy": "chronological hold-out (last 20% of dates) with a 14-day gap, plus leave-one-drug-out",
+  "metrics": {
+    "heldOutTest": {
+      "n": 1974,
+      "positiveRate": 0.4438,
+      "accuracy": 0.9605,
+      "balancedAccuracy": 0.9582,
+      "precision": 0.9716,
+      "recall": 0.9384,
+      "f1": 0.9547,
+      "confusionMatrix": {
+        "truePositive": 822,
+        "trueNegative": 1074,
+        "falsePositive": 24,
+        "falseNegative": 54
+      },
+      "rocAuc": 0.9835,
+      "prAuc": 0.986,
+      "brierScore": 0.0335
+    },
+    "chronologicalHoldout": {
+      "randomForest": {
+        "n": 1974,
+        "positiveRate": 0.4438,
+        "accuracy": 0.9605,
+        "balancedAccuracy": 0.9582,
+        "precision": 0.9716,
+        "recall": 0.9384,
+        "f1": 0.9547,
+        "confusionMatrix": {
+          "truePositive": 822,
+          "trueNegative": 1074,
+          "falsePositive": 24,
+          "falseNegative": 54
+        },
+        "rocAuc": 0.9835,
+        "prAuc": 0.986,
+        "brierScore": 0.0335
+      },
+      "ruleBaseline_daysOfSupply_lt_leadTime_plus_7": {
+        "n": 1974,
+        "positiveRate": 0.4438,
+        "accuracy": 0.9574,
+        "balancedAccuracy": 0.9559,
+        "precision": 0.9615,
+        "recall": 0.9418,
+        "f1": 0.9516,
+        "confusionMatrix": {
+          "truePositive": 825,
+          "trueNegative": 1065,
+          "falsePositive": 33,
+          "falseNegative": 51
+        }
+      },
+      "majorityClassBaseline": {
+        "n": 1974,
+        "positiveRate": 0.4438,
+        "accuracy": 0.5562,
+        "balancedAccuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusionMatrix": {
+          "truePositive": 0,
+          "trueNegative": 1098,
+          "falsePositive": 0,
+          "falseNegative": 876
+        }
+      },
+      "trainRows": 9030,
+      "testRows": 1974,
+      "trainPositiveRate": 0.4495,
+      "trainDates": "2025-03-02 .. 2026-05-05",
+      "testDates": "after 2026-05-19 (gap of 14 days so no label overlaps training)"
+    },
+    "leaveOneDrugOut": {
+      "drugs": [
+        "Amoxicillin 250mg",
+        "Azithromycin 500mg",
+        "Ceftriaxone 1g Injection",
+        "Insulin Glargine 100IU",
+        "Metformin 500mg",
+        "ORS Sachets",
+        "Paracetamol 500mg"
+      ],
+      "randomForest": {
+        "f1": {
+          "mean": 0.9536,
+          "min": 0.9153,
+          "max": 0.9877
+        },
+        "balancedAccuracy": {
+          "mean": 0.9573,
+          "min": 0.9217,
+          "max": 0.9888
+        },
+        "rocAuc": {
+          "mean": 0.9804,
+          "min": 0.9592,
+          "max": 0.9995
+        },
+        "prAuc": {
+          "mean": 0.9847,
+          "min": 0.9708,
+          "max": 0.9995
+        }
+      },
+      "ruleBaseline": {
+        "f1": {
+          "mean": 0.9543,
+          "min": 0.921,
+          "max": 0.9898
+        },
+        "balancedAccuracy": {
+          "mean": 0.9582,
+          "min": 0.9262,
+          "max": 0.9905
+        }
+      },
+      "perDrug": {
+        "Amoxicillin 250mg": {
+          "randomForest": {
+            "n": 1614,
+            "positiveRate": 0.4418,
+            "accuracy": 0.9727,
+            "balancedAccuracy": 0.9729,
+            "precision": 0.9639,
+            "recall": 0.9748,
+            "f1": 0.9693,
+            "confusionMatrix": {
+              "truePositive": 695,
+              "trueNegative": 875,
+              "falsePositive": 26,
+              "falseNegative": 18
+            },
+            "rocAuc": 0.9945,
+            "prAuc": 0.9946,
+            "brierScore": 0.0227
+          },
+          "ruleBaseline": {
+            "n": 1614,
+            "positiveRate": 0.4418,
+            "accuracy": 0.9678,
+            "balancedAccuracy": 0.9682,
+            "precision": 0.9559,
+            "recall": 0.9719,
+            "f1": 0.9638,
+            "confusionMatrix": {
+              "truePositive": 693,
+              "trueNegative": 869,
+              "falsePositive": 32,
+              "falseNegative": 20
+            }
+          }
+        },
+        "Azithromycin 500mg": {
+          "randomForest": {
+            "n": 1614,
+            "positiveRate": 0.4659,
+            "accuracy": 0.9337,
+            "balancedAccuracy": 0.9317,
+            "precision": 0.9523,
+            "recall": 0.9029,
+            "f1": 0.927,
+            "confusionMatrix": {
+              "truePositive": 679,
+              "trueNegative": 828,
+              "falsePositive": 34,
+              "falseNegative": 73
+            },
+            "rocAuc": 0.9592,
+            "prAuc": 0.9708,
+            "brierScore": 0.0538
+          },
+          "ruleBaseline": {
+            "n": 1614,
+            "positiveRate": 0.4659,
+            "accuracy": 0.9275,
+            "balancedAccuracy": 0.9262,
+            "precision": 0.9355,
+            "recall": 0.9069,
+            "f1": 0.921,
+            "confusionMatrix": {
+              "truePositive": 682,
+              "trueNegative": 815,
+              "falsePositive": 47,
+              "falseNegative": 70
+            }
+          }
+        },
+        "Ceftriaxone 1g Injection": {
+          "randomForest": {
+            "n": 1614,
+            "positiveRate": 0.4368,
+            "accuracy": 0.9585,
+            "balancedAccuracy": 0.9566,
+            "precision": 0.9623,
+            "recall": 0.9418,
+            "f1": 0.952,
+            "confusionMatrix": {
+              "truePositive": 664,
+              "trueNegative": 883,
+              "falsePositive": 26,
+              "falseNegative": 41
+            },
+            "rocAuc": 0.9792,
+            "prAuc": 0.9827,
+            "brierScore": 0.0406
+          },
+          "ruleBaseline": {
+            "n": 1614,
+            "positiveRate": 0.4368,
+            "accuracy": 0.9579,
+            "balancedAccuracy": 0.9559,
+            "precision": 0.9623,
+            "recall": 0.9404,
+            "f1": 0.9512,
+            "confusionMatrix": {
+              "truePositive": 663,
+              "trueNegative": 883,
+              "falsePositive": 26,
+              "falseNegative": 42
+            }
+          }
+        },
+        "Insulin Glargine 100IU": {
+          "randomForest": {
+            "n": 1614,
+            "positiveRate": 0.4318,
+            "accuracy": 0.9715,
+            "balancedAccuracy": 0.9692,
+            "precision": 0.9808,
+            "recall": 0.9527,
+            "f1": 0.9665,
+            "confusionMatrix": {
+              "truePositive": 664,
+              "trueNegative": 904,
+              "falsePositive": 13,
+              "falseNegative": 33
+            },
+            "rocAuc": 0.9877,
+            "prAuc": 0.9902,
+            "brierScore": 0.0224
+          },
+          "ruleBaseline": {
+            "n": 1614,
+            "positiveRate": 0.4318,
+            "accuracy": 0.9777,
+            "balancedAccuracy": 0.9768,
+            "precision": 0.9783,
+            "recall": 0.9699,
+            "f1": 0.9741,
+            "confusionMatrix": {
+              "truePositive": 676,
+              "trueNegative": 902,
+              "falsePositive": 15,
+              "falseNegative": 21
+            }
+          }
+        },
+        "Metformin 500mg": {
+          "randomForest": {
+            "n": 1614,
+            "positiveRate": 0.4548,
+            "accuracy": 0.9888,
+            "balancedAccuracy": 0.9888,
+            "precision": 0.9877,
+            "recall": 0.9877,
+            "f1": 0.9877,
+            "confusionMatrix": {
+              "truePositive": 725,
+              "trueNegative": 871,
+              "falsePositive": 9,
+              "falseNegative": 9
+            },
+            "rocAuc": 0.9995,
+            "prAuc": 0.9995,
+            "brierScore": 0.0101
+          },
+          "ruleBaseline": {
+            "n": 1614,
+            "positiveRate": 0.4548,
+            "accuracy": 0.9907,
+            "balancedAccuracy": 0.9905,
+            "precision": 0.9918,
+            "recall": 0.9877,
+            "f1": 0.9898,
+            "confusionMatrix": {
+              "truePositive": 725,
+              "trueNegative": 874,
+              "falsePositive": 6,
+              "falseNegative": 9
+            }
+          }
+        },
+        "ORS Sachets": {
+          "randomForest": {
+            "n": 1614,
+            "positiveRate": 0.4634,
+            "accuracy": 0.9263,
+            "balancedAccuracy": 0.9217,
+            "precision": 0.9787,
+            "recall": 0.8596,
+            "f1": 0.9153,
+            "confusionMatrix": {
+              "truePositive": 643,
+              "trueNegative": 852,
+              "falsePositive": 14,
+              "falseNegative": 105
+            },
+            "rocAuc": 0.9676,
+            "prAuc": 0.9745,
+            "brierScore": 0.0668
+          },
+          "ruleBaseline": {
+            "n": 1614,
+            "positiveRate": 0.4634,
+            "accuracy": 0.9368,
+            "balancedAccuracy": 0.9349,
+            "precision": 0.9524,
+            "recall": 0.9091,
+            "f1": 0.9302,
+            "confusionMatrix": {
+              "truePositive": 680,
+              "trueNegative": 832,
+              "falsePositive": 34,
+              "falseNegative": 68
+            }
+          }
+        },
+        "Paracetamol 500mg": {
+          "randomForest": {
+            "n": 1614,
+            "positiveRate": 0.4374,
+            "accuracy": 0.9634,
+            "balancedAccuracy": 0.9601,
+            "precision": 0.9821,
+            "recall": 0.9334,
+            "f1": 0.9572,
+            "confusionMatrix": {
+              "truePositive": 659,
+              "trueNegative": 896,
+              "falsePositive": 12,
+              "falseNegative": 47
+            },
+            "rocAuc": 0.9754,
+            "prAuc": 0.9807,
+            "brierScore": 0.0342
+          },
+          "ruleBaseline": {
+            "n": 1614,
+            "positiveRate": 0.4374,
+            "accuracy": 0.9566,
+            "balancedAccuracy": 0.9548,
+            "precision": 0.9595,
+            "recall": 0.9405,
+            "f1": 0.9499,
+            "confusionMatrix": {
+              "truePositive": 664,
+              "trueNegative": 880,
+              "falsePositive": 28,
+              "falseNegative": 42
+            }
+          }
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Ground truth is SIMULATED: the 'shortage' label is computed from synthetic sales and randomly drawn stock levels, not from observed stock-outs.",
+    "The sales history is synthetic (generate_dataset.py), so performance reflects the generator, not real demand.",
+    "The label is largely determined by days of supply vs. lead time, so a simple rule is a strong baseline; the model adds value only through trend/volatility information.",
+    "No validation on real pharmacy or hospital data has been done. Do not present these scores as validated real-world forecasting."
+  ]
+}

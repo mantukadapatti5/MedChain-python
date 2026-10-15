@@ -1,0 +1,13 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+pymongo==4.9.1
+influxdb-client==1.47.0
+pandas>=2.2
+numpy>=2.0
+scikit-learn>=1.5
+joblib>=1.4
+pyjwt==2.9.0
+python-multipart==0.0.9
+pydantic==2.9.2

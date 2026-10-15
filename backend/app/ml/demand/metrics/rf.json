@@ -1,0 +1,52 @@
+{
+  "model": "demand_rf",
+  "algorithm": "RandomForestRegressor",
+  "trained_at": "2026-09-08T02:47:26.648613",
+  "train_seconds": 151.0,
+  "feature_cols": [
+    "lag_1",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_mean_30",
+    "rolling_std_7",
+    "rolling_std_14",
+    "rolling_std_30",
+    "day_of_week",
+    "week_of_year",
+    "month",
+    "doy_sin",
+    "doy_cos",
+    "days_since_start",
+    "demand_trend",
+    "Drug_ID_code",
+    "Region_code",
+    "Category_code"
+  ],
+  "metrics": {
+    "train": {
+      "n": 127800,
+      "mae": 58.114,
+      "rmse": 114.066,
+      "mape": 7.0,
+      "r2": 0.8667
+    },
+    "validation": {
+      "n": 18400,
+      "mae": 68.23,
+      "rmse": 132.653,
+      "mape": 7.44,
+      "r2": 0.8568
+    },
+    "test": {
+      "n": 30200,
+      "mae": 67.077,
+      "rmse": 128.807,
+      "mape": 7.59,
+      "r2": 0.8407
+    }
+  }
+}

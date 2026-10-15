@@ -1,0 +1,39 @@
+{
+  "model": "demand_lstm",
+  "algorithm": "LSTM(32) -> Dropout -> Dense(16) -> Dense(1)",
+  "trained_at": "2026-10-15T07:37:17.565897",
+  "train_seconds": 146.3,
+  "lookback_days": 30,
+  "seq_features": [
+    "Daily_Consumption_Units",
+    "day_of_week",
+    "month",
+    "doy_sin",
+    "doy_cos"
+  ],
+  "scaler_mean": 655.9374439461883,
+  "scaler_std": 312.9285113547142,
+  "metrics": {
+    "train": {
+      "n": 127800,
+      "mae": 63.233,
+      "rmse": 122.962,
+      "mape": 8.38,
+      "r2": 0.8451
+    },
+    "validation": {
+      "n": 18400,
+      "mae": 67.84,
+      "rmse": 132.125,
+      "mape": 8.19,
+      "r2": 0.8579
+    },
+    "test": {
+      "n": 30200,
+      "mae": 67.274,
+      "rmse": 128.936,
+      "mape": 8.1,
+      "r2": 0.8404
+    }
+  }
+}

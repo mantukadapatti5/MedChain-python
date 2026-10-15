@@ -1,0 +1,12 @@
+{
+  "weights": {
+    "rf": 0.3297,
+    "xgboost": 0.3387,
+    "lstm": 0.3316
+  },
+  "based_on_validation_mae": {
+    "rf": 68.23,
+    "xgboost": 66.42,
+    "lstm": 67.84
+  }
+}

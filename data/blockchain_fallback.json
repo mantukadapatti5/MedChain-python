@@ -1,0 +1,309 @@
+{
+  "blockchain_blocks": [
+    {
+      "index": 0,
+      "timestamp": "2026-01-01T00:00:00.000Z",
+      "type": "GENESIS",
+      "actor": "system",
+      "data": {
+        "message": "Drug Supply Chain Ledger Initialized"
+      },
+      "prevHash": "0",
+      "hash": "0f9fefa78a74d73d1613c13921c4b588dd21d245b8f666d1ca78adbe97429769"
+    },
+    {
+      "index": 1,
+      "timestamp": "2026-09-01T06:34:35.486Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Ibuprofen",
+        "batch": "IBU-2024-001",
+        "severity": "low",
+        "anomalyScore": 0.6381,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "0f9fefa78a74d73d1613c13921c4b588dd21d245b8f666d1ca78adbe97429769",
+      "hash": "64add1e069c9b2419325334db3635db2e29891c34cc6c15826affd9480bfbb86"
+    },
+    {
+      "index": 2,
+      "timestamp": "2026-09-01T06:34:35.486Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Azithromycin",
+        "batch": "AZI-2023-009",
+        "severity": "low",
+        "anomalyScore": 0.623,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "64add1e069c9b2419325334db3635db2e29891c34cc6c15826affd9480bfbb86",
+      "hash": "64934d32fac25eb612c25253b7ed10517b6be9b2f2344737a84fbe456f927633"
+    },
+    {
+      "index": 3,
+      "timestamp": "2026-09-01T06:34:35.486Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Atorvastatin",
+        "batch": "ATO-2023-005",
+        "severity": "low",
+        "anomalyScore": 0.6197,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "64934d32fac25eb612c25253b7ed10517b6be9b2f2344737a84fbe456f927633",
+      "hash": "fa66a79d33bf9f1930fc32379b50b7bc7fe8b70749b1d95a3133d4f2d8603107"
+    },
+    {
+      "index": 4,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Azithromycin",
+        "batch": "AZI-2025-011",
+        "severity": "low",
+        "anomalyScore": 0.6204,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "fa66a79d33bf9f1930fc32379b50b7bc7fe8b70749b1d95a3133d4f2d8603107",
+      "hash": "83d8407017ab4a42a9db752d3de14e4e5b1eec50f68ae7d70c21192c5c04fbee"
+    },
+    {
+      "index": 5,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Azithromycin",
+        "batch": "AZI-2025-015",
+        "severity": "low",
+        "anomalyScore": 0.6155,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "83d8407017ab4a42a9db752d3de14e4e5b1eec50f68ae7d70c21192c5c04fbee",
+      "hash": "5575e287444b9027e938c0f91a046212c018cc5a59259305e01b4d17515b58ee"
+    },
+    {
+      "index": 6,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Azithromycin",
+        "batch": "AZI-2024-017",
+        "severity": "low",
+        "anomalyScore": 0.6137,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "5575e287444b9027e938c0f91a046212c018cc5a59259305e01b4d17515b58ee",
+      "hash": "2dffa9ebfdaa5aa9eb691dba35c4f88f7fdce07e42d993513add603817fc17ab"
+    },
+    {
+      "index": 7,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Atorvastatin",
+        "batch": "ATO-2023-010",
+        "severity": "low",
+        "anomalyScore": 0.6066,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "2dffa9ebfdaa5aa9eb691dba35c4f88f7fdce07e42d993513add603817fc17ab",
+      "hash": "af048aae18b65220ec34db2789bf603b24a5321344662115e5b36ae8462c3005"
+    },
+    {
+      "index": 8,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Salbutamol",
+        "batch": "SAL-2024-012",
+        "severity": "low",
+        "anomalyScore": 0.6175,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "af048aae18b65220ec34db2789bf603b24a5321344662115e5b36ae8462c3005",
+      "hash": "a5a19219b018b0322ef2b9e5e3b680d803ef6ab726e35db7d2e5291ec48d5059"
+    },
+    {
+      "index": 9,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Azithromycin",
+        "batch": "AZI-2024-019",
+        "severity": "low",
+        "anomalyScore": 0.6056,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "a5a19219b018b0322ef2b9e5e3b680d803ef6ab726e35db7d2e5291ec48d5059",
+      "hash": "1695b5db78e63a6228c2fb50c2cc6b2777d290f61f1fd869f558cfd21a2ac9e1"
+    },
+    {
+      "index": 10,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Atorvastatin",
+        "batch": "ATO-2025-021",
+        "severity": "low",
+        "anomalyScore": 0.6137,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "1695b5db78e63a6228c2fb50c2cc6b2777d290f61f1fd869f558cfd21a2ac9e1",
+      "hash": "97a134efbfa4def88789675b2c689f05845e5e5a04cef89bbbc0e50ca4480e16"
+    },
+    {
+      "index": 11,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Amoxicillin",
+        "batch": "AMO-2024-016",
+        "severity": "low",
+        "anomalyScore": 0.6197,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "97a134efbfa4def88789675b2c689f05845e5e5a04cef89bbbc0e50ca4480e16",
+      "hash": "aa411171fc332ab85c9e86c29880c88ecd522368e7f7473546a902099f006d92"
+    },
+    {
+      "index": 12,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Omeprazole",
+        "batch": "OME-2023-023",
+        "severity": "low",
+        "anomalyScore": 0.6086,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "aa411171fc332ab85c9e86c29880c88ecd522368e7f7473546a902099f006d92",
+      "hash": "c38b3e8e98c8894bbf366b1b7c5c31919513187b0a563643e87f4b16df8cba22"
+    },
+    {
+      "index": 13,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "vendor",
+        "drugName": "Amlodipine",
+        "batch": "AML-2024-033",
+        "severity": "low",
+        "anomalyScore": 0.6063,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "c38b3e8e98c8894bbf366b1b7c5c31919513187b0a563643e87f4b16df8cba22",
+      "hash": "6cabc4ecc9330e8eb0804343743ea676517a87804309c4f8ca1889c00a1aaa1a"
+    },
+    {
+      "index": 14,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "distributor",
+        "drugName": "Metformin",
+        "batch": "MET-2024-001",
+        "severity": "low",
+        "anomalyScore": 0.6095,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "6cabc4ecc9330e8eb0804343743ea676517a87804309c4f8ca1889c00a1aaa1a",
+      "hash": "675f7204452f549c49ae33af2239da3b770de484911925a6bfef271a6b35fd6c"
+    },
+    {
+      "index": 15,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "distributor",
+        "drugName": "Paracetamol",
+        "batch": "PAR-2025-004",
+        "severity": "low",
+        "anomalyScore": 0.6089,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "675f7204452f549c49ae33af2239da3b770de484911925a6bfef271a6b35fd6c",
+      "hash": "1507598345c26f1d8069cfb15221b421ff8f9614988c0c4ca9b0e6b83100b9c2"
+    },
+    {
+      "index": 16,
+      "timestamp": "2026-09-01T06:34:35.487Z",
+      "type": "ANOMALY_DETECTED",
+      "actor": "system:isolation-forest",
+      "data": {
+        "portal": "distributor",
+        "drugName": "Azithromycin",
+        "batch": "AZI-2024-001",
+        "severity": "low",
+        "anomalyScore": 0.621,
+        "model": "Isolation Forest"
+      },
+      "prevHash": "1507598345c26f1d8069cfb15221b421ff8f9614988c0c4ca9b0e6b83100b9c2",
+      "hash": "50773d1036a15b8490abe6aa866df43866359ceb45c04b4558775ed5360edf90"
+    },
+    {
+      "index": 17,
+      "timestamp": "2026-09-01T06:34:35.531Z",
+      "type": "STOCK_REQUEST_APPROVED",
+      "actor": "vendor@gmail.com",
+      "data": {
+        "portal": "vendor",
+        "requestId": 3,
+        "drugName": "Ciprofloxacin",
+        "region": "North Zone",
+        "qtyRequested": 100,
+        "qtyDispatched": 100,
+        "shortfall": 0,
+        "batchesAllocated": [
+          {
+            "batch": "CIP-2023-009",
+            "qty": 100,
+            "expiryDate": "2024-12-09"
+          }
+        ]
+      },
+      "prevHash": "50773d1036a15b8490abe6aa866df43866359ceb45c04b4558775ed5360edf90",
+      "hash": "a227e5601599fc59ef36bd962f4d01338fe6108dbbd03e892048faf9ed1a11c3"
+    },
+    {
+      "index": 18,
+      "timestamp": "2026-09-01T06:34:35.531Z",
+      "type": "ORDER_DISPATCHED",
+      "actor": "vendor@gmail.com",
+      "data": {
+        "portal": "vendor",
+        "requestId": 3,
+        "drugName": "Ciprofloxacin",
+        "qty": 100
+      },
+      "prevHash": "a227e5601599fc59ef36bd962f4d01338fe6108dbbd03e892048faf9ed1a11c3",
+      "hash": "779c8550bc71c5bafea8cafcd6b29a9b8e8190c0987c254caa09f6188b54dc8c"
+    }
+  ]
+}

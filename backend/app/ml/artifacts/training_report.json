@@ -1,0 +1,77 @@
+{
+  "trainedAt": "2026-09-05T10:49:40.473238",
+  "method": "Random Forest Regressor (scikit-learn, 100 trees, max depth 6)",
+  "datasetSize": 4060,
+  "drugCount": 7,
+  "trainRows": 3248,
+  "testRows": 812,
+  "testSplitStrategy": "Chronological per-drug split \u2014 last 20% of each drug's date range held out; model never saw these dates during training",
+  "trainSeconds": 0.4,
+  "metrics": {
+    "onTrainingData": {
+      "n": 3248,
+      "mae": 3.28,
+      "rmse": 11.11,
+      "mape": 8.8,
+      "r2": 0.797
+    },
+    "onHeldOutTestData": {
+      "n": 812,
+      "mae": 4.28,
+      "rmse": 14.98,
+      "mape": 14.14,
+      "r2": 0.765
+    }
+  },
+  "perDrugTestMetrics": {
+    "Paracetamol 500mg": {
+      "n": 116,
+      "mae": 1.64,
+      "rmse": 2.14,
+      "mape": 4.83,
+      "r2": 0.883
+    },
+    "Amoxicillin 250mg": {
+      "n": 116,
+      "mae": 2.65,
+      "rmse": 3.26,
+      "mape": 16.04,
+      "r2": 0.188
+    },
+    "Insulin Glargine 100IU": {
+      "n": 116,
+      "mae": 1.2,
+      "rmse": 1.51,
+      "mape": 9.58,
+      "r2": 0.36
+    },
+    "Azithromycin 500mg": {
+      "n": 116,
+      "mae": 2.73,
+      "rmse": 4.4,
+      "mape": 19.77,
+      "r2": 0.308
+    },
+    "Ceftriaxone 1g Injection": {
+      "n": 116,
+      "mae": 2.41,
+      "rmse": 5.34,
+      "mape": 27.55,
+      "r2": -0.048
+    },
+    "ORS Sachets": {
+      "n": 116,
+      "mae": 17.97,
+      "rmse": 38.76,
+      "mape": 16.89,
+      "r2": -0.019
+    },
+    "Metformin 500mg": {
+      "n": 116,
+      "mae": 1.33,
+      "rmse": 1.68,
+      "mape": 4.35,
+      "r2": 0.901
+    }
+  }
+}

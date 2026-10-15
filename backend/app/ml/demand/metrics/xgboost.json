@@ -1,0 +1,53 @@
+{
+  "model": "demand_xgboost",
+  "algorithm": "XGBRegressor",
+  "trained_at": "2026-10-15T07:34:19.402133",
+  "train_seconds": 13.1,
+  "best_iteration": 95,
+  "feature_cols": [
+    "lag_1",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_mean_30",
+    "rolling_std_7",
+    "rolling_std_14",
+    "rolling_std_30",
+    "day_of_week",
+    "week_of_year",
+    "month",
+    "doy_sin",
+    "doy_cos",
+    "days_since_start",
+    "demand_trend",
+    "Drug_ID_code",
+    "Region_code",
+    "Category_code"
+  ],
+  "metrics": {
+    "train": {
+      "n": 127800,
+      "mae": 59.208,
+      "rmse": 117.395,
+      "mape": 7.09,
+      "r2": 0.8588
+    },
+    "validation": {
+      "n": 18400,
+      "mae": 66.42,
+      "rmse": 131.399,
+      "mape": 7.25,
+      "r2": 0.8595
+    },
+    "test": {
+      "n": 30200,
+      "mae": 66.421,
+      "rmse": 128.162,
+      "mape": 7.48,
+      "r2": 0.8423
+    }
+  }
+}

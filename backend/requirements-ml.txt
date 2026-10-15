@@ -1,0 +1,8 @@
+# Additional dependencies for the vendor demand-forecasting ensemble
+# (XGBoost + LSTM). Kept separate from requirements.txt for local installs
+# that only need the core API; the Docker image installs these to serve the
+# included ensemble artifacts.
+#
+# Install with: pip install -r backend/requirements-ml.txt
+xgboost>=2.0
+tensorflow-cpu>=2.16
