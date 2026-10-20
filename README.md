@@ -59,9 +59,10 @@ and the Vite frontend (port 5173). The backend Dockerfile trains both ML
 models at build time so the API works immediately, and its entrypoint
 script waits for Postgres to be reachable and auto-seeds the database from
 `data/db_seed_source.json` the first time it's empty — no manual step
-needed. (If you ever want to force a full reset back to the seed data,
-`docker compose exec backend python -m app.seed` still works and is safe
-to re-run any time.)
+needed. The seed script is destructive: running
+`docker compose exec backend python -m app.seed` drops and reloads the
+business tables and replaces the blockchain ledger with the seed copy. Back
+up the database and ledger first if you need to reset an existing instance.
 
 Open http://localhost:5173 — the frontend talks to the backend container
 by its Docker service name (`API_PROXY_TARGET`, set in docker-compose.yml),
@@ -79,6 +80,18 @@ python -m app.ml.evaluate_models   # optional: regenerates EVALUATION.md / evalu
 python -m app.seed                 # migrates data/db_seed_source.json into SQLite + local fallback stores
 uvicorn app.main:app --reload --port 5000
 ```
+
+In a second terminal, start the frontend locally:
+
+```powershell
+cd frontend
+npm ci
+npm run dev
+```
+
+Open http://localhost:5173. In this local setup, Vite proxies API requests
+to `http://localhost:5000`, while the backend uses SQLite and local JSON/JSONL
+fallbacks when MongoDB and InfluxDB are not configured.
 
 Demo logins (same as the original project — see `data/db_seed_source.json`
 for the full list): `admin@gmail.com` / `admin12`, `vendor@gmail.com` /

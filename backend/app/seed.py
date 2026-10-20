@@ -17,9 +17,9 @@ CSV datasets can continue to serve as seed/training/import data; they do
 not need to disappear."
 
 Run with:  python -m app.seed
-Safe to re-run: it clears and reloads every Postgres table each time
-(this is a fresh migration script for setting up a new environment, not an
-incremental sync).
+Destructive to re-run: it clears and reloads every Postgres table and
+replaces the blockchain collection each time (this is a fresh migration
+script for setting up a new environment, not an incremental sync).
 """
 import json
 
